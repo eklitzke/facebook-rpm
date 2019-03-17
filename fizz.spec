@@ -9,11 +9,11 @@ Source0:        https://github.com/facebookincubator/fizz/archive/v%{version}/fi
 
 Patch1:         0001-gflags.patch
 
-BuildRequires:  folly-devel
+BuildRequires:  folly-devel = %{version}-%{release}
 BuildRequires:  gcc-c++
 BuildRequires:  gmock-devel
 
-Requires:       folly
+Requires:       folly = %{version}-%{release}
 
 %description
 
