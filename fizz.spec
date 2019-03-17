@@ -33,7 +33,7 @@ developing applications that use %{name}.
 %patch1 -p1
 
 %build
-%cmake -DFOLLY_CMAKE_DIR=/usr/lib64/cmake/folly\
+%cmake -DFOLLY_CMAKE_DIR=%{_libdir}/cmake/folly\
        -DCMAKE_INSTALL_DIR=%{_libdir}/cmake/fizz\
        fizz/
 %make_build

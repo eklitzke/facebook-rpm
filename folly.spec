@@ -70,7 +70,9 @@ developing applications that use %{name}.
 # FIXME: fix hard-coded arch
 export CXXFLAGS="$CXXFLAGS -fPIC"
 %cmake -DCMAKE_LIBRARY_ARCHITECTURE=x86-64\
-       -DCMAKE_INSTALL_DIR=%{_libdir}/cmake/folly .
+       -DCMAKE_INSTALL_DIR=%{_libdir}/cmake/folly\
+       -DFOLLY_CMAKE_DIR=%{_libdir}/cmake/folly\
+       .
 %make_build
 
 
