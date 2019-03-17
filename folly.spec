@@ -5,7 +5,7 @@ Summary:        An open-source C++ library developed and used at Facebook.
 
 License:        Apache2
 URL:            https://github.com/facebook/folly
-Source0:        https://github.com/facebook/folly/archive/v%{version}/folly-v%{version}.tar.gz
+Source0:        https://github.com/facebook/folly/archive/v%{version}/folly-%{version}.tar.gz
 
 BuildRequires:  binutils-devel
 BuildRequires:  boost-devel
