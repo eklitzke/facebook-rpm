@@ -9,11 +9,12 @@ Source0:        https://github.com/facebookincubator/fizz/archive/v%{version}/fi
 
 Patch1:         0001-gflags.patch
 
-BuildRequires:  folly-devel = %{version}-%{release}
+BuildRequires:  cmake
+BuildRequires:  folly-devel = %{version}
 BuildRequires:  gcc-c++
 BuildRequires:  gmock-devel
 
-Requires:       folly = %{version}-%{release}
+Requires:       folly = %{version}
 
 %description
 
@@ -61,4 +62,4 @@ developing applications that use %{name}.
 
 %changelog
 * Sun Mar 17 2019 Evan Klitzke <evan@eklitzke.org>
--
+- Initial build.
