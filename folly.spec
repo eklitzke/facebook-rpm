@@ -7,7 +7,9 @@ License:        Apache2
 URL:            https://github.com/facebook/folly
 Source0:        https://github.com/facebook/folly/archive/v%{version}/folly-v%{version}.tar.gz
 
+BuildRequires:  binutils-devel
 BuildRequires:  boost-devel
+BuildRequires:  bzip2-devel
 BuildRequires:  cmake
 BuildRequires:  double-conversion-devel
 BuildRequires:  gcc-c++
@@ -20,11 +22,14 @@ BuildRequires:  libdwarf-devel
 BuildRequires:  libevent-devel
 BuildRequires:  libsodium-devel
 BuildRequires:  libunwind-devel
+BuildRequires:  libzstd-devel
+BuildRequires:  lz4-devel
 BuildRequires:  openssl-devel
 BuildRequires:  snappy-devel
 BuildRequires:  xz-devel
 
 Requires:       boost
+Requires:       bzip2-libs
 Requires:       double-conversion
 Requires:       gflags
 Requires:       glog
@@ -34,6 +39,8 @@ Requires:       libdwarf
 Requires:       libevent
 Requires:       libsodium
 Requires:       libunwind
+Requires:       libzstd
+Requires:       lz4-libs
 Requires:       openssl-libs
 Requires:       snappy
 Requires:       xz-libs
