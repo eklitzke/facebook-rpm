@@ -7,6 +7,7 @@ License:        Apache2
 URL:            https://github.com/facebook/folly
 Source0:        https://github.com/facebook/folly/archive/v%{version}/folly-v%{version}.tar.gz
 
+BuildRequires:  boost-devel
 BuildRequires:  cmake
 BuildRequires:  double-conversion-devel
 BuildRequires:  gcc-c++
@@ -16,18 +17,21 @@ BuildRequires:  gtest-devel
 BuildRequires:  jemalloc-devel
 BuildRequires:  libaio-devel
 BuildRequires:  libdwarf-devel
+BuildRequires:  libevent-devel
 BuildRequires:  libsodium-devel
 BuildRequires:  libunwind-devel
 BuildRequires:  openssl-devel
 BuildRequires:  snappy-devel
 BuildRequires:  xz-devel
 
+Requires:       boost
 Requires:       double-conversion
 Requires:       gflags
 Requires:       glog
 Requires:       jemalloc
 Requires:       libaio
 Requires:       libdwarf
+Requires:       libevent
 Requires:       libsodium
 Requires:       libunwind
 Requires:       openssl-libs
@@ -58,12 +62,14 @@ developing applications that use %{name}.
 %build
 # FIXME: fix hard-coded arch
 export CXXFLAGS="$CXXFLAGS -fPIC"
-%cmake -D CMAKE_LIBRARY_ARCHITECTURE=x86-64 .
+%cmake -DCMAKE_LIBRARY_ARCHITECTURE=x86-64\
+       -DCMAKE_INSTALL_LIBDIR=%{_libdir} .
 %make_build
 
 
 %install
 %make_install
+mv %{buildroot}%{_prefix}/lib/cmake %{buildroot}%{_libdir}/cmake
 
 %check
 ctest -V %{?_smp_mflags}
@@ -77,14 +83,12 @@ ctest -V %{?_smp_mflags}
 %license LICENSE
 %doc README.md
 %{_libdir}/*.so
-%{_libdir}/pkgconfig/libfolly.pc
-
-# FIXME: hardcoded libdir
-%{_prefix}/lib/cmake/folly/
 
 %files devel
 %doc README.md
 %{_includedir}/*
+%{_libdir}/cmake/folly
+%{_libdir}/pkgconfig/libfolly.pc
 
 
 %changelog
