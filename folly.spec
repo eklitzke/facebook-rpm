@@ -5,7 +5,7 @@ Summary:        An open-source C++ library developed and used at Facebook.
 
 License:        Apache2
 URL:            https://github.com/facebook/folly
-Source0:        https://github.com/facebook/folly/archive/v%{version}/folly-%{version}.tar.gz
+Source0:        https://github.com/facebook/folly/archive/v%{version}/folly-v%{version}.tar.gz
 
 BuildRequires:  binutils-devel
 BuildRequires:  boost-devel
@@ -45,17 +45,30 @@ Requires:       openssl-libs
 Requires:       snappy
 Requires:       xz-libs
 
-
-
-
-
-
 %description
 
 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+BuildRequires:  binutils-devel
+BuildRequires:  boost-devel
+BuildRequires:  bzip2-devel
+BuildRequires:  double-conversion-devel
+BuildRequires:  gflags-devel >= 2.2.0
+BuildRequires:  glog-devel
+BuildRequires:  gtest-devel
+BuildRequires:  jemalloc-devel
+BuildRequires:  libaio-devel
+BuildRequires:  libdwarf-devel
+BuildRequires:  libevent-devel
+BuildRequires:  libsodium-devel
+BuildRequires:  libunwind-devel
+BuildRequires:  libzstd-devel
+BuildRequires:  lz4-devel
+BuildRequires:  openssl-devel
+BuildRequires:  snappy-devel
+BuildRequires:  xz-devel
 
 %description    devel
 The %{name}-devel package contains libraries and header files for
