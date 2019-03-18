@@ -51,24 +51,24 @@ Requires:       xz-libs
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-BuildRequires:  binutils-devel
-BuildRequires:  boost-devel
-BuildRequires:  bzip2-devel
-BuildRequires:  double-conversion-devel
-BuildRequires:  gflags-devel >= 2.2.0
-BuildRequires:  glog-devel
-BuildRequires:  gtest-devel
-BuildRequires:  jemalloc-devel
-BuildRequires:  libaio-devel
-BuildRequires:  libdwarf-devel
-BuildRequires:  libevent-devel
-BuildRequires:  libsodium-devel
-BuildRequires:  libunwind-devel
-BuildRequires:  libzstd-devel
-BuildRequires:  lz4-devel
-BuildRequires:  openssl-devel
-BuildRequires:  snappy-devel
-BuildRequires:  xz-devel
+Requires:       binutils-devel
+Requires:       boost-devel
+Requires:       bzip2-devel
+Requires:       double-conversion-devel
+Requires:       gflags-devel >= 2.2.0
+Requires:       glog-devel
+Requires:       gtest-devel
+Requires:       jemalloc-devel
+Requires:       libaio-devel
+Requires:       libdwarf-devel
+Requires:       libevent-devel
+Requires:       libsodium-devel
+Requires:       libunwind-devel
+Requires:       libzstd-devel
+Requires:       lz4-devel
+Requires:       openssl-devel
+Requires:       snappy-devel
+Requires:       xz-devel
 
 %description    devel
 The %{name}-devel package contains libraries and header files for
