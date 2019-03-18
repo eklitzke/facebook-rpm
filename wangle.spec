@@ -7,13 +7,34 @@ License:        Apache2
 URL:            https://github.com/facebook/wangle
 Source0:        https://github.com/facebook/wangle/archive/v%{version}/wangle-v%{version}.tar.gz
 
-BuildRequires: cmake
-BuildRequires: fizz-devel
-BuildRequires: folly-devel
-BuildRequires: gcc-c++
+BuildRequires:  cmake
+BuildRequires:  fizz-devel = %{version}
+BuildRequires:  folly-devel = %{version}
+BuildRequires:  gcc-c++
+BuildRequires:  gmock-devel
+BuildRequires:  openssl-devel
+BuildRequires:  binutils-devel
+BuildRequires:  boost-devel
+BuildRequires:  bzip2-devel
+BuildRequires:  double-conversion-devel
+BuildRequires:  gflags-devel >= 2.2.0
+BuildRequires:  glog-devel
+BuildRequires:  gtest-devel
+BuildRequires:  jemalloc-devel
+BuildRequires:  libaio-devel
+BuildRequires:  libdwarf-devel
+BuildRequires:  libevent-devel
+BuildRequires:  libsodium-devel
+BuildRequires:  libunwind-devel
+BuildRequires:  libzstd-devel
+BuildRequires:  lz4-devel
+BuildRequires:  openssl-devel
+BuildRequires:  snappy-devel
+BuildRequires:  xz-devel
+BuildRequires:  cmake
 
-Requires:      fizz
-Requires:      folly
+Requires:       fizz
+Requires:       folly
 
 %description
 
