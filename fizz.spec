@@ -10,6 +10,7 @@ Source0:        https://github.com/facebookincubator/fizz/archive/v%{version}/fi
 BuildRequires:  cmake
 BuildRequires:  folly-devel = %{version}
 BuildRequires:  gcc-c++
+BuildRequires:  gmock-devel
 
 Requires:       folly = %{version}
 
