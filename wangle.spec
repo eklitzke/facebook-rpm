@@ -10,7 +10,7 @@ Source0:        https://github.com/facebook/wangle/archive/v%{version}/wangle-v%
 BuildRequires: cmake
 BuildRequires: fizz-devel
 BuildRequires: folly-devel
-BuildRequires: gflags-devel >= 2.2.0
+BuildRequires: gcc-c++
 
 Requires:      fizz
 Requires:      folly
