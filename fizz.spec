@@ -1,13 +1,11 @@
 Name:           fizz
-Version:        2019.03.04.00
+Version:        2019.03.18.00
 Release:        1%{?dist}
 Summary:        C++14 implementation of the TLS-1.3 standard
 
 License:        Apache2
 URL:            https://github.com/facebookincubator/fizz
 Source0:        https://github.com/facebookincubator/fizz/archive/v%{version}/fizz-v%{version}.tar.gz
-
-Patch1:         0001-gflags.patch
 
 BuildRequires:  cmake
 BuildRequires:  folly-devel = %{version}
@@ -31,7 +29,6 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
-%patch1 -p1
 
 %build
 %cmake -DFOLLY_CMAKE_DIR=%{_libdir}/cmake/folly\
@@ -64,5 +61,8 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+* Mon Mar 18 2019 Evan Klitzke <evan@eklitzke.org> - 2019.03.18.00-1
+- new version
+
 * Sun Mar 17 2019 Evan Klitzke <evan@eklitzke.org>
 - Initial build.

@@ -1,5 +1,5 @@
 Name:           wangle
-Version:        2019.03.04.00
+Version:        2019.03.18.00
 Release:        1%{?dist}
 Summary:        Wangle is a framework providing a set of common client/server abstractions for building services in a consistent, modular, and composable way.
 
@@ -56,8 +56,12 @@ ctest -V %{?_smp_mflags}
 %files devel
 %doc README.md
 %{_includedir}/*
+%{_libdir}/*.so
 %{_libdir}/cmake/wangle/
 
 %changelog
+* Mon Mar 18 2019 Evan Klitzke <evan@eklitzke.org> - 2019.03.18.00-1
+- new version
+
 * Mon Mar 18 2019 Evan Klitzke <evan@eklitzke.org>
 - Initial package

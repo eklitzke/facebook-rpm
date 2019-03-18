@@ -1,5 +1,5 @@
 Name:           folly
-Version:        2019.03.04.00
+Version:        2019.03.18.00
 Release:        1%{?dist}
 Summary:        An open-source C++ library developed and used at Facebook.
 
@@ -100,5 +100,8 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+* Mon Mar 18 2019 Evan Klitzke <evan@eklitzke.org> - 2019.03.18.00-1
+- new version
+
 * Sun Mar 17 2019 Evan Klitzke <evan@eklitzke.org>
 - Initial package
