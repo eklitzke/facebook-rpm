@@ -12,6 +12,7 @@ Patch1:         0001-gflags.patch
 BuildRequires:  cmake
 BuildRequires:  folly-devel = %{version}
 BuildRequires:  gcc-c++
+BuildRequires:  gflags-devel >= 2.2.0
 BuildRequires:  gmock-devel
 
 Requires:       folly = %{version}
@@ -42,6 +43,8 @@ developing applications that use %{name}.
 %install
 %make_install
 
+%check
+ctest -V %{?_smp_mflags}
 
 %post -p /sbin/ldconfig
 

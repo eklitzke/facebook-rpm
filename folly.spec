@@ -13,7 +13,7 @@ BuildRequires:  bzip2-devel
 BuildRequires:  cmake
 BuildRequires:  double-conversion-devel
 BuildRequires:  gcc-c++
-BuildRequires:  gflags-devel
+BuildRequires:  gflags-devel >= 2.2.0
 BuildRequires:  glog-devel
 BuildRequires:  gtest-devel
 BuildRequires:  jemalloc-devel
