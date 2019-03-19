@@ -10,13 +10,32 @@ Source0:        https://github.com/facebook/proxygen/archive/v%{version}/proxyge
 BuildRequires:  autoconf
 BuildRequires:  autoconf-archive
 BuildRequires:  automake
-BuildRequires:  cmake
+BuildRequires:  binutils-devel
+BuildRequires:  boost-devel
+BuildRequires:  bzip2-devel
+BuildRequires:  double-conversion-devel
 BuildRequires:  fizz-devel   = %{version}
 BuildRequires:  folly-devel  = %{version}
 BuildRequires:  gcc-c++
+BuildRequires:  gflags-devel >= 2.2.0
+BuildRequires:  glog-devel
+BuildRequires:  gmock-devel
 BuildRequires:  gperf
+BuildRequires:  gtest-devel
+BuildRequires:  jemalloc-devel
+BuildRequires:  libaio-devel
+BuildRequires:  libdwarf-devel
+BuildRequires:  libevent-devel
+BuildRequires:  libsodium-devel
 BuildRequires:  libtool
+BuildRequires:  libunwind-devel
+BuildRequires:  libzstd-devel
+BuildRequires:  lz4-devel
+BuildRequires:  openssl-devel
+BuildRequires:  python
+BuildRequires:  snappy-devel
 BuildRequires:  wangle-devel = %{version}
+BuildRequires:  xz-devel
 
 Requires:  folly  = %{version}
 Requires:  fizz   = %{version}
