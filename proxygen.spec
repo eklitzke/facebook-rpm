@@ -8,11 +8,14 @@ URL:            https://github.com/facebook/proxygen
 Source0:        https://github.com/facebook/proxygen/archive/v%{version}/proxygen-%{version}.tar.gz
 
 BuildRequires:  autoconf
+BuildRequires:  autoconf-archive
 BuildRequires:  automake
 BuildRequires:  cmake
-BuildRequires:  gcc-c++
-BuildRequires:  folly-devel  = %{version}
 BuildRequires:  fizz-devel   = %{version}
+BuildRequires:  folly-devel  = %{version}
+BuildRequires:  gcc-c++
+BuildRequires:  gperf
+BuildRequires:  libtool
 BuildRequires:  wangle-devel = %{version}
 
 Requires:  folly  = %{version}
@@ -37,15 +40,18 @@ developing applications that use %{name}.
 cd proxygen
 autoreconf -ivf
 
-
 %build
+cd proxygen
 %configure --disable-static
 %make_build
 
 
 %install
+rm -rf $RPM_BUILD_ROOT
+cd proxygen
 %make_install
-
+find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
+find $RPM_BUILD_ROOT -name '*.a' -exec rm -f {} ';'
 
 %post -p /sbin/ldconfig
 
@@ -53,13 +59,14 @@ autoreconf -ivf
 
 
 %files
+%doc README.md
 %license LICENSE
+%{_libdir}/*.so
 %{_libdir}/*.so.*
+%{_libdir}/proxygen/
 
 %files devel
-%doc README.md
 %{_includedir}/*
-%{_libdir}/*.so
 
 
 %changelog

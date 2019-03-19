@@ -83,11 +83,11 @@ ctest -V %{?_smp_mflags}
 
 
 %files
+%doc README.md
 %license LICENSE
 %{_libdir}/*.so
 
 %files devel
-%doc README.md
 %{_includedir}/*
 %{_libdir}/cmake/folly/
 %{_libdir}/pkgconfig/libfolly.pc
