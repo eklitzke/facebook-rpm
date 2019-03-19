@@ -71,7 +71,6 @@ ctest -V %{?_smp_mflags}
 
 %files
 %license LICENSE
-%doc README.md
 %{_libdir}/*.so.*
 
 %files devel

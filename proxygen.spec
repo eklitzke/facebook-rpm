@@ -7,6 +7,8 @@ License:        Apache2
 URL:            https://github.com/facebook/proxygen
 Source0:        https://github.com/facebook/proxygen/archive/v%{version}/proxygen-%{version}.tar.gz
 
+BuildRequires:  autoconf
+BuildRequires:  automake
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  folly-devel  = %{version}
@@ -32,6 +34,8 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
+cd proxygen
+autoreconf -ivf
 
 
 %build
@@ -40,9 +44,7 @@ developing applications that use %{name}.
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %make_install
-find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 
 %post -p /sbin/ldconfig
@@ -51,12 +53,11 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 
 %files
-%license add-license-file-here
-%doc add-main-docs-here
+%license LICENSE
 %{_libdir}/*.so.*
 
 %files devel
-%doc add-devel-docs-here
+%doc README.md
 %{_includedir}/*
 %{_libdir}/*.so
 
